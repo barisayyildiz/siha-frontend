@@ -1,0 +1,13 @@
+p{
+	color : red;
+	font-family: 'Arial';
+	font-size: 1.1rem;
+	padding : 0px 30px;
+}
+
+.info{
+	background-color: rgb(66, 66, 66);
+	position: absolute;
+	bottom : 0px;
+	width: 100%;
+}
