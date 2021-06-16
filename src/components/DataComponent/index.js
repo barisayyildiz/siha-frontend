@@ -13,7 +13,7 @@ function DataComponent(props) {
 					return(
 						<p style={{
 							color : item.color
-						}}>enlem : {item.lat}, boylam : {item.lon}, yükseklik : {item.height}, mod : {item.mode ? 'manual' : 'otonom'}</p>
+						}}>enlem : {item.lat}, boylam : {item.lon}, yükseklik : {item.height}, mod : {item.mode ? 'manuel' : 'otonom'}</p>
 					)
 				})
 			}

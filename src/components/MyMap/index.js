@@ -20,9 +20,9 @@ function MyMap(props){
 	useEffect(() => {
 		// hakem serverına bağlan
 		const socket = socketIOClient("http://localhost:5555");
-		socket.on("output road", data => {
-			console.log(data);
+		const socket2 = socketIOClient("http://localhost:8080");
 
+		socket.on("output road", data => {
 			const newCoords = data.map((item, key) => {
 				return({
 					...item,
@@ -31,6 +31,10 @@ function MyMap(props){
 			})
 			console.log("gelen bilgi : ", data);
 			setCoords(newCoords);
+		})
+
+		socket2.on("frontend data", data => {
+			console.log("benim verim : ", data);
 		})
 
 	}, [])
