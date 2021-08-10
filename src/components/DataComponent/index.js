@@ -4,8 +4,6 @@ import './style.css';
 
 function DataComponent(props) {
 	const { data } = props;
-	console.log(data);
-
 	return (
 		<div className="info">
 			{

@@ -8,6 +8,7 @@ import DataComponent from '../DataComponent';
 function MyMap(props){
 
 	const endpoint = "http://localhost:5555";	// hakem serverı
+
 	const [coords, setCoords] = useState([]);
 	const [colors, setColors] = useState([
 		'#3a95cb',
@@ -18,10 +19,10 @@ function MyMap(props){
 	]);
 
 	useEffect(() => {
-		// hakem serverına bağlan
-		const socket = socketIOClient("http://localhost:5555");
-		const socket2 = socketIOClient("http://localhost:8080");
+		// hakem serverına bağlanıyor
+		const socket = socketIOClient(endpoint);
 
+		// elde edilen veriler ile statelerimizi değiştiriyoruz
 		socket.on("output road", data => {
 			const newCoords = data.map((item, key) => {
 				return({
@@ -29,14 +30,9 @@ function MyMap(props){
 					color : colors[key]
 				})
 			})
-			console.log("gelen bilgi : ", data);
+			console.log(`gelen bilgi : ${data}`);
 			setCoords(newCoords);
 		})
-
-		socket2.on("frontend data", data => {
-			console.log("benim verim : ", data);
-		})
-
 	}, [])
 
 	return(
