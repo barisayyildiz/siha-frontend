@@ -13,7 +13,7 @@ Hakem sunucusundan **enlem/boylam/yükseklik/mod ve koordinat** bilgileri gelir.
 * Sunucu ile iletişim için web soketleri ve [socket.io](https://socket.io/) kütüphanesi kullanılmıştır
 
 
-Projeyi çalıştırmak için
+Projeyi çalıştırmak için :  
 
 ```
 git clone https://github.com/barisayyildiz/siha-frontend  
